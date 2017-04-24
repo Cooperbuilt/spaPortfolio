@@ -7,6 +7,40 @@
 </head>
 <body>
 
+	<aside>
+			<div class="nav-section resume" onclick= "load_home ()" >
+				<img src="resume.png" />
+				<h2>Resume</h2>
+			</div>
+	
+			<div class="nav-section portfolio">
+				<img src="coding.png" />
+				<h2>Portfolio</h2>
+			</div>
+	
+			<div class="nav-section blog">
+				<img src="wordpress-logo-button.png" />
+				<h2>Dev Blog</h2>
+			</div>
+	</aside>
+
+	<div id="inner-flex-container">
+
+	    <section>
+	    	<div class="callout">
+	    		<h1>Hello Friend, </h1>
+	    		<h1>I'm Evan Cooper.</h1>
+	    	</div>
+	    </section>
+
+	</div>
+
 </body>
 <script type="text/javascript" src="app.js"></script>
+<script type="text/javascript">
+	function load_home() {
+		$(".callout").load("home.html");
+	}
+
+</script>
 </html>
