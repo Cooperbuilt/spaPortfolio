@@ -6,41 +6,40 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-
-	<aside>
-			<div class="nav-section resume" onclick= "load_home ()" >
+ <aside class="side-nav">
+ 	        <a href="#boob"><div class="nav-section resume hide-nav">
 				<img src="resume.png" />
 				<h2>Resume</h2>
-			</div>
+			</div></a>
 	
-			<div class="nav-section portfolio">
+			<a href="#butt"><div class="nav-section portfolio hide-nav">
 				<img src="coding.png" />
 				<h2>Portfolio</h2>
-			</div>
+			</div></a>
 	
-			<div class="nav-section blog">
+			<a href="#ass"><div class="nav-section blog hide-nav">
 				<img src="wordpress-logo-button.png" />
 				<h2>Dev Blog</h2>
-			</div>
-	</aside>
+			</div></a>	 
+ </aside>
+ <main class="main">
+ 	<button class="hamburger hamburger--collapse" type="button">
+  		<span class="hamburger-box">
+    	<span class="hamburger-inner"></span>
+ 	</span>
+	</button>
 
-	<div id="inner-flex-container">
+	<section>
+		<h1>Hello, this is Evan Cooper</h1>
+ 		<p>Here is some other stuff</p>
+ 		
 
-	    <section>
-	    	<div class="callout">
-	    		<h1>Hello Friend, </h1>
-	    		<h1>I'm Evan Cooper.</h1>
-	    	</div>
-	    </section>
+	</section>
 
-	</div>
+ 	
+ </main>
 
 </body>
 <script type="text/javascript" src="app.js"></script>
-<script type="text/javascript">
-	function load_home() {
-		$(".callout").load("home.html");
-	}
 
-</script>
 </html>

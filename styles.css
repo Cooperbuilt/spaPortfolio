@@ -9,65 +9,173 @@ html {
 
 body {
     margin: 0;
-    min-height: 100%;
-    display: flex; /* body is the outer flex container */
-    flex-flow: row wrap;
-    text-align: center;
-}
+    height: 100%;
+   display: flex;
+ }
 
-#inner-flex-container {
-    display: flex;
-    flex-direction: column;
-    width: calc(100% - 150px);
-}
 
-aside   { 
-    flex: 1 150px; 
-    background: white; 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    transition: all 0.5s cubic-bezier(.25,.8,.25,1);
 
-}
-
-section { 
-    flex: 4; 
-    background-image:
+main {
+  color: white;
+  margin: 1.3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image:
     linear-gradient(
-      to left, 
-      #2196F3, #03A9F4
+      to bottom right, 
+      #448AFF, #2962FF
     );
+  transition: all 0.6s cubic-bezier(.25,.8,.25,1);
+  flex: 1;
+}
 
-    margin: 10px;
-    -webkit-box-shadow: 7px 5px 25px -6px rgba(0,0,0,0.75);
-    -moz-box-shadow: 7px 5px 25px -6px rgba(0,0,0,0.75);
-    box-shadow: 7px 5px 25px -6px rgba(0,0,0,0.75);
+.open-menu {
+  margin-left: 20%;
 }
 
 
-
-.callout h1 {
-    font-size: 7rem;
-    color: white;
-}
-
-
-.nav-section {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.4s cubic-bezier(.25,.8,.25,1);
-  margin-left: 10px;
-  padding-top: 10%;
-  background-color: #F5F5F5;
-
-}
-
-.nav-section:hover {
+.shadow {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
 
+section {
+  align-self: center;
+  
+}
 
 
+
+
+
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+
+ button {
+  position: fixed;
+  top: 1.3%;
+  left: 1%;
+ }
+
+.hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  outline: none;
+  overflow: visible; 
+}
+
+
+  .hamburger:hover {
+    opacity: 0.8; }
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative; }
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px; }
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    width: 40px;
+    height: 4px;
+    background-color: #FF9800;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease; }
+.hamburger-inner::before, .hamburger-inner::after {
+    content: "";
+    display: block; }
+.hamburger-inner::before {
+    top: -10px; }
+.hamburger-inner::after {
+    bottom: -10px; }
+
+
+/*
+   * Collapse
+   */
+
+.hamburger--collapse .hamburger-inner {
+  top: auto;
+  bottom: 0;
+  transition-duration: 0.13s;
+  transition-delay: 0.13s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+.hamburger--collapse .hamburger-inner::after {
+    top: -20px;
+    transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0.1s linear; }
+.hamburger--collapse .hamburger-inner::before {
+    transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+.hamburger--collapse.is-active .hamburger-inner {
+  transform: translate3d(0, -10px, 0) rotate(-45deg);
+  transition-delay: 0.22s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+.hamburger--collapse.is-active .hamburger-inner::after {
+    top: 0;
+    opacity: 0;
+    transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.22s linear; }
+.hamburger--collapse.is-active .hamburger-inner::before {
+    top: 0;
+    transform: rotate(-90deg);
+    transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1); }
+
+
+.side-nav {
+  position: absolute;
+  width: 220px;
+  left: -1000px;
+  transition: all 0.6s cubic-bezier(.25,.8,.25,1);
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  box-sizing: border-box;
+}
+
+.is-open {
+  left: 2%;
+  top: 5%;
+}
+
+.nav-section {
+  transition: all 0.1s cubic-bezier(.25,.8,.25,1);
+}
+
+
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.nav-section:hover >h2 {
+  text-decoration: underline;
+}
+
+.hide-nav {
+  opacity: 0;
+}
 
 
 
