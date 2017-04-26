@@ -34,12 +34,12 @@ hamburg.addEventListener('click', function() {
 
 		this.classList.toggle('is-active');
 		
-	}, 300);
+	}, 100);
 	
 	navItems[0].classList.toggle('hide-nav');
 	navItems[1].classList.toggle('hide-nav');
 	navItems[2].classList.toggle('hide-nav');
-	main.classList.toggle('open-menu');
+
 	nav.classList.toggle('is-open');
 
 });
